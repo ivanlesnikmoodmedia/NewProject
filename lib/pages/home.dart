@@ -9,12 +9,9 @@ class HomePage extends StatelessWidget {
     final name = user != null ? (user!['name']) : 'User';
     
     final rooms = [
-      {'title': 'Morning', 'subtitle': 'Start your day with energy', 'asset': ''},
-      {'title': 'Afternoon', 'subtitle': 'Keep the momentum going', 'asset': ''},
-      {'title': 'Evening', 'subtitle': 'Wind down and relax', 'asset': ''},
-      {'title': 'Evening', 'subtitle': 'Wind down and relax', 'asset': ''},
-      {'title': 'Evening', 'subtitle': 'Wind down and relax', 'asset': ''},
-      {'title': 'Evening', 'subtitle': 'Wind down and relax', 'asset': ''},
+      {'title': 'Morning', 'subtitle': 'Start your day with energy', 'asset': 'assets/images/morning.png'},
+      {'title': 'Afternoon', 'subtitle': 'Keep the momentum going', 'asset': 'assets/images/afternoon.png'},
+      {'title': 'Evening', 'subtitle': 'Wind down and relax', 'asset': 'assets/images/evening.png'},
     ];
 
     return Scaffold(
