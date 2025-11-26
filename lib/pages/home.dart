@@ -12,6 +12,9 @@ class HomePage extends StatelessWidget {
       {'title': 'Morning', 'subtitle': 'Start your day with energy', 'asset': ''},
       {'title': 'Afternoon', 'subtitle': 'Keep the momentum going', 'asset': ''},
       {'title': 'Evening', 'subtitle': 'Wind down and relax', 'asset': ''},
+      {'title': 'Evening', 'subtitle': 'Wind down and relax', 'asset': ''},
+      {'title': 'Evening', 'subtitle': 'Wind down and relax', 'asset': ''},
+      {'title': 'Evening', 'subtitle': 'Wind down and relax', 'asset': ''},
     ];
 
     return Scaffold(
@@ -26,8 +29,10 @@ class HomePage extends StatelessWidget {
         ),
       actions: [
         IconButton(
-          icon: const Icon(Icons.notifications, color: Colors.grey),
-          onPressed: () {},
+          icon: const Icon(Icons.logout, color: Colors.grey),
+          onPressed: () {
+            Navigator.of(context).pushNamedAndRemoveUntil('/', (route) => false);
+          },
         ),
       ],
     ),
@@ -44,7 +49,7 @@ class HomePage extends StatelessWidget {
             style: TextStyle(color: Colors.grey)),
           const SizedBox(height: 18),
             
- Expanded(
+       Expanded(
               child: ListView.separated(
                 itemCount: rooms.length,
                 separatorBuilder: (_, __) => const SizedBox(height: 12),
