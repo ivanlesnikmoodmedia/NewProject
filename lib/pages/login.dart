@@ -1,47 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../api/loginapi.dart';
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Login 2025',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const LoginPage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  final Map<String, dynamic>? user;
-
-  const HomePage({Key? key, this.user}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final name = user != null ? user!['name'] ?? 'User' : 'User';
-    final email = user != null ? user!['email'] ?? '' : '';
-
-    return Scaffold(
-      appBar: AppBar(title: Text('Home')),
-      body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text('Welcome, $name', style: const TextStyle(fontSize: 20)),
-            const SizedBox(height: 8),
-            Text(email, style: const TextStyle(color: Colors.grey)),
-          ],
-        ),
-      ),
-    );
-  }
-}
+import 'home.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
