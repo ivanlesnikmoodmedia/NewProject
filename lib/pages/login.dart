@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../models/loginmodel.dart';
 import 'home.dart';
+import 'dart:ui';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -24,31 +25,41 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: Stack(
+        children: [
+             SizedBox(
+              child: Image.asset(
+               'assets/images/background.png',
+               fit: BoxFit.cover,
+               ),
+              ),
+            
+          BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
+              child: Container(
+              color: Colors.black.withOpacity(0.2),
+        ),
+      ),
+       Center(
         child: Padding(
           padding: const EdgeInsets.all(30.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
              SizedBox(
-              height: 160,
+              height: 120,
               child: Image.asset(
-               'assets/images/login.png',
-               fit: BoxFit.contain,
-               ),
+                'assets/images/logo.png',
+                fit: BoxFit.contain
               ),
-            
-              SizedBox(height: 20),
-
-
+             ),
               Text(
                 'Welcome',
                 style: TextStyle(
                   fontFamily: 'Poppins',
                   fontWeight: FontWeight.bold,
                   fontSize: 26,
-                  color: Color(0xFF1C1C1C),
+                  color: Colors.white,
                 ),
               ),
               SizedBox(height: 6),
@@ -58,13 +69,16 @@ class _LoginPageState extends State<LoginPage> {
                   fontFamily: 'Poppins',
                   fontWeight: FontWeight.normal,
                   fontSize: 18,
-                  color: Color(0xFF1C1C1C),
+                  color: Colors.white,
                 ),
               ),
               SizedBox(height: 26),
               TextField(
                 controller: _usernameController,
                 decoration: InputDecoration(
+                  filled: true,
+                  hoverColor: Colors.white,
+                  fillColor: const Color.fromARGB(155, 255, 255, 255),
                   labelText: 'Username',
                   border: OutlineInputBorder(),
                 ),
@@ -73,6 +87,9 @@ class _LoginPageState extends State<LoginPage> {
               TextField(
                 controller: _passwordController,
                 decoration: InputDecoration(
+                  filled: true,
+                  hoverColor: Colors.white,
+                  fillColor: const Color.fromARGB(155, 255, 255, 255),
                   labelText: 'Password',
                   border: OutlineInputBorder(),
                 ),
@@ -116,7 +133,7 @@ class _LoginPageState extends State<LoginPage> {
                     }
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromARGB(255, 174, 185, 24),
+                    backgroundColor: const Color.fromARGB(255, 125, 172, 82),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -196,6 +213,8 @@ class _LoginPageState extends State<LoginPage> {
           ),
         ),
       ),
+      ],
+    ),
     );
   }
 }
