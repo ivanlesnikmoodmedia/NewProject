@@ -124,7 +124,7 @@ class _LoginPageState extends State<LoginPage> {
 
                     if (resp['success'] == true) {
                       Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(builder: (_) => HomePage(user: resp['user'])),
+                        MaterialPageRoute(builder: (_) => HomePage()),
                       );
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
